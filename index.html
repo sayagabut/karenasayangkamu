@@ -1,119 +1,133 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <style>
-    .text-js{
-  opacity: 0;
-}
-.cursor{
-  display: block;
-  position: absolute;
-  height: 100%;
-  top: 0;
-  right: -5px;
-  width: 2px;
-  /* Change colour of Cursor Here */
-  background-color: white;
-  z-index: 1;
-  animation: flash 0.5s none infinite alternate;
-}
-@keyframes flash{
-  0%{
-    opacity: 1;
-  }
-  100%{
-    opacity: 0;
-  }
-}
-
-
-
-
-
-// Rest of CSS (Purely for this pen)
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
-
-*{
-  margin: 0;
-  padding: 0;
-  boz-sizing: border-box;
-  font-family: "Open Sans", sans-serif
-}
-body{
-  background: linear-gradient(135deg,#00C4FF,#9D1BB2);
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-// Text Can be styled just like normal
-.headline{
-  margin: 20px;
-  color: white;
-  font-size: 32px;
-  text-align: center;
-  h1{
-    letter-spacing: 1.6px;
-    font-weight: 300;
-  }
-}
-
-.twitterLink{
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  margin: 10px 15px;
-  z-index: 3;
-  svg{
-    width: 25px;
-  }
-}
-
-.credit{
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: white;
-  text-decoration: none;
-}
-    </style>
-  </head>
-  <div class="type-js headline">
-  <h1 class="text-js">Selamat, Sayang!</h1>
-  </div>
-
-  <script>
-    function autoType(elementClass, typingSpeed){
-      var thhis = $(elementClass);
-      thhis.css({
-      "position": "relative",
-      "display": "inline-block"
-  });
-    thhis.prepend('<div class="cursor" style="right: initial; left:0;"></div>');
-    thhis = thhis.find(".text-js");
-    var text = thhis.text().trim().split('');
-    var amntOfChars = text.length;
-    var newString = "";
-    thhis.text("|");
-    setTimeout(function(){
-    thhis.css("opacity",1);
-    thhis.prev().removeAttr("style");
-    thhis.text("");
-      for(var i = 0; i < amntOfChars; i++){
-        (function(i,char){
-          setTimeout(function() {        
-            newString += char;
-            thhis.text(newString);
-          },i*typingSpeed);
-        })(i+1,text[i]);
+  <title>Lagi Kangen:(</title>
+  <style>
+      @import 'https://fonts.googleapis.com/css?family=Baloo+Paaji';
+  
+      $primary-color: #1e90ff ;
+      $secondary-color: #ffe221;
+      $tertiary-color: #ffffff;
+ 
+      html, body{
+          height: 100%;
       }
-    },1500);
-  }
+      body{
+          font-family: 'Baloo Paaji', cursive;
+          background: $primary-color;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+      .container{
+          width: 400px;
+          height: 220px;
+          position: relative;
+      }
 
-$(document).ready(function(){  
-  autoType(".type-js",200);
-});
-    </script>
+      h1, h2{
+          font-size: 75px;
+          text-transform: uppercase;
+  
+  
+          span{
+              width: 100%;
+              float: left;
+              color: $tertiary-color;
+              -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+              clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+              transform: translateY(-50px);
+              opacity: 0;
+              animation-name: titleAnimation;
+              animation-timing-function:ease;
+              animation-duration: 3s;
+          }
+      }
+      h1 span{
+          animation-delay: 0.6s;
+          -webkit-animation-fill-mode: forwards;
+
+          &:first-child{
+              animation-delay: 0.7s;
+          }
+
+          &:last-child{
+              color: $secondary-color;
+              animation-delay: 0.5s;
+          }
+      }
+
+      h2{ 
+          top: 0;
+          position: absolute;
+  
+          span{
+              animation-delay: 4.1s;
+              -webkit-animation-fill-mode: forwards;
+
+              &:first-child{
+                  animation-delay: 4.2s;
+
+              }
+
+              &:last-child{
+                  color: $secondary-color;
+                  animation-delay: 4s;
+              }
+          }
+      }
+
+      .usechrome{
+          font-size: 10px;
+          color: #fff;
+          font-family: helvetica, arial;
+          position: absolute;
+          bottom: 20px;
+          width: 100%;
+          text-align: center;
+          left: 0;
+      }
+
+      @keyframes titleAnimation {
+          0% {
+              transform: translateY(-50px);
+              opacity: 0;
+              -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+              clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+          }
+          20% {
+              transform: translateY(0);
+              opacity: 1;
+              -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+              clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+          }
+          80% {
+              transform: translateY(0);
+              opacity: 1;
+              -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+              clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+          }
+          100% {
+              transform: translateY(50px);
+              opacity: 0;
+              -webkit-clip-path: polygon(100% 0, 100% -0%, 0 100%, 0 100%);
+              clip-path: polygon(100% 0, 100% -0%, 0 100%, 0 100%);
+    
+          }
+      }
+    </style>
+</head>
+    <section class="container">
+        <h1 class="title">
+            <span>Selamat</span>
+            <span>Pagi</span>
+            <span>Sayang</span>
+        </h1>
+  
+        <h2 class="title">
+            <span>Jangan</span>
+            <span>Lupa</span>
+            <span>Sarapan ya :)</span>
+        </h2>
+    </section>
 </html>
-
