@@ -1,7 +1,7 @@
 body {
-  background: linear-gradient((218deg, #FF8E47 ,#FF2CED);
+  background: linear-gradient( #FF8E47 ,#FF2CED);
   text-align: center;
-  color:#333333;
+  color:#fff;
   padding-top:10em;
 }
 
